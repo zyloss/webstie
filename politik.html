@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Metadata untuk halaman web -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Berita Terkini tentang Ekonomi dan Perkembangan Dunia Ekonomi">
+  <title>Berita Ekonomi</title>
+
+  <!-- Menambahkan Google Fonts untuk penggunaan font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      margin: 0;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff6347;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      list-style: none;
+      padding: 10px 0;
+      min-width: 150px;
+      border-radius: 5px;
+    }
+
+    .dropdown li {
+      padding: 10px;
+    }
+
+    .dropdown li a {
+      color: white;
+      padding: 8px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown li a:hover {
+      background-color: #ff6347;
+    }
+
+    /* Menampilkan dropdown saat hover */
+    .nav-links li:hover .dropdown {
+      display: block;
+    }
+
+    /* News Section Styles */
+    .news-section {
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+
+    .news-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .news-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    /* Menambahkan Style untuk Gambar di Atas Teks */
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      width: 32%;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .news-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-item h3 {
+      font-size: 1.2rem;
+      margin: 15px;
+      color: #333;
+    }
+
+    .news-item p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0 15px 15px;
+    }
+
+    .news-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .news-item:hover img {
+      filter: brightness(80%);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsivitas untuk Mobile */
+    @media (max-width: 768px) {
+      .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+      }
+
+      .nav-links li:hover .dropdown {
+        display: block;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links li a {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .news-item {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .news-item img {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><img src="rezap-removebg-preview.png" style="height: 60px;"></div>
+      <ul class="nav-links">
+        <li><a href="IndraGunawan.html">Beranda</a></li>
+        <li>
+          <a href="#">Kategori</a>
+          <ul class="dropdown">
+            <li><a href="ekonomi.html">Ekonomi</a></li>
+            <li><a href="sosial.html">Sosial</a></li>
+            <li><a href="politik.html">Politik</a></li>
+          </ul>
+        </li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section Berita Ekonomi -->
+  <section class="news-section">
+    <h2>Berita Politik Terkini</h2>
+    <p>Politik adalah hal yang paling sering dibincang-bincangkan oleh banyak orang. Dengan adanya pelantikan presiden yang masih belum lama terjadi dan banyaknya perubahan yang sedang terjadi di seluruh Indonesia banyak orang jadi penasaran bagaimana masa depan Indonesia dengan masalah politik zaman Sekarang.</p>
+    
+    <div class="news-container">
+      <div class="news-item">
+        <img src="politkk1.jpg" alt="Penurunan Suku Bunga">
+        <div>
+          <h3>Adu Kuat "Endorsement" Prabowo-Jokowi dan Anies-Ahok pada Pilkada Jakarta</h3>
+          <p>Pertarungan pasangan calon gubernur (cagub) dan calon wakil gubernur (cawagub) Jakarta nomor urut 1 dan 3, Ridwan Kamil-Suswono dan Pramono Anung-Rano Karno tampak masih sengit menjelang hari pencoblosan pada Rabu (27/11/2024) mendatang.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="politkk2.jpg" alt="Tren Ekonomi Digital">
+        <div>
+          <h3>Prolegnas Prioritas 2025 Disahkan DPR, Baleg Bahas RUU Mulai Akhir November</h3>
+          <p>Badan Legislasi (Baleg) DPR RI memastikan bakal langsung memulai rapat pembahasan terkait revisi/rancangan undang-undang (RUU) yang masuk daftar program legislasi nasional (Prolegnas) prioritas 2025.
+</p> 
+   </div>
+      </div>
+
+      <div class="news-item">
+        <img src="politik3.jpeg" alt="Dampak Inflasi">
+        <div>
+          <h3>Wamendagri Sebut Prabowo Ingin Perbaiki Sistem Politik Berbiaya Sangat Mahal </h3>
+          <p>Wakil Menteri Dalam Negeri (Wamendagri) Bima Arya mengatakan, Presiden Prabowo Subianto ingin memperbaiki sistem politik yang saat ini dinilai berbiaya mahal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 RezaPahala. Semua Hak Cipta Dilindungi.</p>
+  </footer>
+</body>
+</html>

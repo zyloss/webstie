@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Metadata untuk halaman web -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website berita terkini dengan desain menarik dan informatif">
+  <title>Website Berita</title>
+
+  <!-- Menambahkan Google Fonts untuk penggunaan font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      margin: 0;
+      position: relative; /* Menambahkan posisi relatif untuk submenu */
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff6347;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      list-style: none;
+      padding: 10px 0;
+      min-width: 150px;
+      border-radius: 5px;
+    }
+
+    .dropdown li {
+      padding: 10px;
+    }
+
+    .dropdown li a {
+      color: white;
+      padding: 8px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown li a:hover {
+      background-color: #ff6347;
+    }
+
+    /* Menampilkan dropdown saat hover */
+    .nav-links li:hover .dropdown {
+      display: block;
+    }
+
+    /* Carousel Styles (Unchanged) */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 393px;
+      overflow: hidden;
+    }
+
+    .carousel-container {
+      display: flex;
+      width: 300%;
+      transition: transform 1s ease-in-out;
+    }
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .carousel-item.active {
+      display: block;
+    }
+
+    .carousel-item img {
+      width: 700px;
+      height: 393px;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .carousel-caption h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .carousel-caption p {
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    /* News Section Styles */
+    .news {
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+
+    .news h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .news-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .news-item {
+      width: 30%;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .news-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-item h3 {
+      font-size: 1.2rem;
+      margin: 15px;
+      color: #333;
+    }
+
+    .news-item p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0 15px 15px;
+    }
+
+    .news-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .news-item:hover img {
+      filter: brightness(80%);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsivitas untuk Mobile */
+    @media (max-width: 768px) {
+      .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+      }
+
+      .nav-links li:hover .dropdown {
+        display: block;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links li a {
+        padding: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo Website -->
+      <div class="logo"><img src="rezap-removebg-preview.png" style="height: 60px;"></div>
+      
+      <!-- Menu Navigasi -->
+      <ul class="nav-links">
+        <li><a href="IndraGunawan.html">Beranda</a></li>
+        <li>
+          <a href="#">Kategori</a>
+          <!-- Dropdown submenu -->
+          <ul class="dropdown">
+            <li><a href="ekonomi.html">Ekonomi</a></li>
+            <li><a href="sosial.html">Sosial</a></li>
+            <li><a href="politik.html">Politik</a></li>
+          </ul>
+        </li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+`
+  <!-- Carousel untuk berita utama -->
+  <section class="carousel">
+    <div class="carousel-container">
+      <!-- Item carousel pertama -->
+      <div class="carousel-item active">
+        <img src="mantap.png" alt="Berita 1">
+        <img src="pranowo.jpg" alt="Berita 1">
+        <div class="carousel-caption">
+          <h2>Presiden Prabowo Naikkan Pangkat Agus Andrianto Jadi Jenderal Kehormatan</h2>
+          <p>Presiden Prabowo Subianto menaikkan pangkat satu tingkat lebih tinggi kepada Komisaris Jenderal (Purn) Agus Andrianto yang kini menjabat Menteri Imigrasi dan Pemasyarakatan.</p>
+        </div>
+      </div>
+
+      <!-- Item carousel kedua -->
+      <div class="carousel-item">
+        <img src="indo.jpg" alt="Berita 2">
+        <img src="timnan.png" alt="Berita 2">
+        <div class="carousel-caption">
+          <h2>Indonesia Vs Jepang, Nagatomo Iri atas Antusiasme Masyarakat Indonesia</h2>
+          <p>Pemain senior timnas Jepang, Yuto Nagatomo, mengaku terkesan dengan antusiasme masyarakat Indonesia terhadap sepak bola.</p>
+        </div>
+      </div>
+
+      <!-- Item carousel ketiga -->
+      <div class="carousel-item">
+        <img src="boow.jpg" alt="Berita 3">
+        <img src="kapolri.jpeg" alt="Berita 3">
+        <div class="carousel-caption">
+          <h2>Ngeri Faktor-faktor di Balik Meningkatnya Judi Online Diungkap Kapolri</h2>
+          <p>Kapolri Jenderal Listyo Sigit Prabowo mengungkap faktor-faktor yang bikin judi online (judol) terus meningkat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bagian Berita Terkini -->
+  <section class="news">
+    <h2>Berita Terkini</h2>
+    <div class="news-container">
+      <!-- Berita pertama -->
+      <article class="news-item">
+        <img src="potret-mobil-mobil-ringsek-akibat-kecelakaan-beruntun-di-tol-cipularang-6_169.jpg" alt="Berita 1">
+        <h3>Berita 1 Terkini</h3>
+        <p>Kesaksian Korban Selamat soal Kecelakaan Beruntun di Tol Cipularang</p>
+      </article>
+      
+      <!-- Berita kedua -->
+      <article class="news-item">
+        <img src="gibran-pimpin-rapat-penanggulangan-erupsi-gunung-lewotobi_169.jpg" alt="Berita 2">
+        <h3>Berita 2 Terkini</h3>
+        <p>Gibran Pimpin Rapat Penanggulangan Erupsi Gunung Lewotobi</p>
+      </article>
+
+      <!-- Berita ketiga -->
+      <article class="news-item">
+        <img src="ketua-komisi-x-dpr-hetifah-sjaifudian-foto-dok-pribadi-4_169.jpg" alt="Berita 3">
+        <h3>Berita 3 Terkini</h3>
+        <p>Kata Ketua Komisi X DPR Soal Wapres Gibran Nilai Perlu UU Perlindungan Guru</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 RezaPahala. Semua Hak Cipta Dilindungi.</p>
+  </footer>
+
+  <!-- Script untuk mengontrol carousel -->
+  <script>
+    // Mendeklarasikan variabel untuk mengatur indeks slide aktif
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    // Fungsi untuk menampilkan slide berikutnya
+    function showNextSlide() {
+      items[currentIndex].classList.remove('active'); // Menghapus kelas 'active' dari gambar saat ini
+      currentIndex = (currentIndex + 1) % totalItems; // Berpindah ke gambar berikutnya
+      items[currentIndex].classList.add('active'); // Menambahkan kelas 'active' ke gambar berikutnya
+    }
+
+    // Menjalankan fungsi showNextSlide setiap 3 detik
+    setInterval(showNextSlide, 3000); // Mengganti slide setiap 3 detik
+  </script>
+</body>
+</html>

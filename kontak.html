@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Metadata untuk halaman web -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tentang Lionel Gunawan, seorang tokoh terkenal yang berperan besar dalam dunia teknologi dan media.">
+  <title>Tentang Lionel Gunawan</title>
+
+  <!-- Menambahkan Google Fonts untuk penggunaan font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      margin: 0;
+      position: relative; /* Menambahkan posisi relatif untuk submenu */
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff6347;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      list-style: none;
+      padding: 10px 0;
+      min-width: 150px;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown li {
+      padding: 10px;
+    }
+
+    .dropdown li a {
+      color: white;
+      padding: 8px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown li a:hover {
+      background-color: #ff6347;
+    }
+
+    /* Menampilkan dropdown saat hover */
+    .nav-links li:hover .dropdown {
+      display: block;
+    }
+
+    /* Halaman Tentang Kami Styles */
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    /* Membuat gambar berbentuk bulat dan menaruhnya di tengah */
+    .about-section img {
+      border-radius: 50%; /* Membuat gambar menjadi bulat */
+      margin: 20px 0;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    /* Form Styling */
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-container button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #ff6347;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><img src="rezap-removebg-preview.png" style="height: 60px;"></div>
+      <ul class="nav-links">
+        <li><a href="IndraGunawan.html">Beranda</a></li>
+        <li>
+          <a href="#">Kategori</a>
+          <!-- Dropdown submenu -->
+          <ul class="dropdown">
+            <li><a href="ekonomi.html">Ekonomi</a></li>
+            <li><a href="sosial.html">Sosial</a></li>
+            <li><a href="politik.html">Politik</a></li>
+          </ul>
+        </li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- Formulir Kontak -->
+    <div class="form-container">
+      <h3>Hubungi Kami</h3>
+      <form action="#" method="POST">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
+
+        <label for="gender">Jenis Kelamin:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Laki-laki</option>
+          <option value="female">Perempuan</option>
+          <option value="trans">Yang lain</option>
+        </select>
+
+        <label for="phone">Nomor Telepon:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Masukkan nomor telepon Anda">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+
+        <label for="comment">Komentar:</label>
+        <textarea id="comment" name="comment" rows="4" required placeholder="Masukkan komentar atau pesan Anda"></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 RezaPahala. Semua Hak Cipta Dilindungi.</p>
+  </footer>
+</body>
+</html>

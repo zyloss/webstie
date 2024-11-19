@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Metadata untuk halaman web -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Berita Terkini tentang Ekonomi dan Perkembangan Dunia Ekonomi">
+  <title>Berita Ekonomi</title>
+
+  <!-- Menambahkan Google Fonts untuk penggunaan font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      margin: 0;
+      position: relative; /* Menambahkan posisi relatif untuk submenu */
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff6347;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      list-style: none;
+      padding: 10px 0;
+      min-width: 150px;
+      border-radius: 5px;
+    }
+
+    .dropdown li {
+      padding: 10px;
+    }
+
+    .dropdown li a {
+      color: white;
+      padding: 8px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown li a:hover {
+      background-color: #ff6347;
+    }
+
+    /* Menampilkan dropdown saat hover */
+    .nav-links li:hover .dropdown {
+      display: block;
+    }
+
+    /* News Section Styles */
+    .news-section {
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+
+    .news-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .news-container {
+      display: flex;
+      justify-content: space-between;  /* Membuat item saling berdampingan */
+      flex-wrap: wrap;                  /* Membuat item bisa membungkus jika layar kecil */
+      gap: 30px;
+    }
+
+    /* Menambahkan Style untuk Gambar di Atas Teks */
+    .news-item {
+      display: flex;
+      flex-direction: column;            /* Mengatur gambar di atas teks */
+      width: 32%;                        /* Menjaga 3 item dalam satu baris */
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .news-item img {
+      width: 100%;                       /* Gambar akan memenuhi lebar kontainer */
+      height: 200px;                     /* Ukuran tetap untuk gambar */
+      object-fit: cover;                 /* Menjaga proporsi gambar */
+    }
+
+    .news-item h3 {
+      font-size: 1.2rem;
+      margin: 15px;
+      color: #333;
+    }
+
+    .news-item p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0 15px 15px;
+    }
+
+    .news-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .news-item:hover img {
+      filter: brightness(80%);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsivitas untuk Mobile */
+    @media (max-width: 768px) {
+      .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+      }
+
+      .nav-links li:hover .dropdown {
+        display: block;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links li a {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .news-item {
+        flex-direction: column; /* Mengubah layout menjadi kolom di perangkat mobile */
+        width: 100%;              /* Agar semua berita memenuhi lebar layar */
+      }
+
+      .news-item img {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><img src="rezap-removebg-preview.png" style="height: 60px;"></div>
+      <ul class="nav-links">
+        <li><a href="IndraGunawan.html">Beranda</a></li>
+        <li>
+          <a href="#">Kategori</a>
+          <!-- Dropdown submenu -->
+          <ul class="dropdown">
+            <li><a href="ekonomi.html">Ekonomi</a></li>
+            <li><a href="sosial.html">Sosial</a></li>
+            <li><a href="politik.html">Politik</a></li>
+          </ul>
+        </li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section Berita Sosial -->
+  <section class="news-section">
+    <h2>Berita Sosial Terkini</h2>
+    <p>Berita sosial yang terjadi di Indonesia terus berkembang. Banyak isu sosial yang menyita perhatian masyarakat, dari penghargaan di bidang sosial hingga permasalahan yang dihadapi oleh masyarakat Indonesia.</p>
+    
+    <!-- Contoh Artikel Sosial -->
+    <div class="news-container">
+      <div class="news-item">
+        <img src="sosial1.jpeg" alt="Penurunan Suku Bunga">
+        <div>
+          <h3>RI Raih 2 Penghargaan Berkat Kontribusinya di Bidang Ekonomi & Sosial</h3>
+          <p>PT Bank Rakyat Indonesia (Persero) Tbk atau BRI kembali menorehkan prestasi membanggakan dengan meraih penghargaan bergengsi di CNN Indonesia Awards Bali 2024.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="sosial2.jpg" alt="Dampak Inflasi">
+        <div>
+          <h3>Megawati Sindir Konflik Agraria dan Investasi Tanpa Kelayakan Sosial</h3>
+          <p>Ketua Umum PDIP Megawati Sukarnoputri menyinggung berbagai konflik agraria dan persoalan investasi tanpa melalui kelayakan sosial yang belakangan terjadi.</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="news-item">
+        <img src="sosial3.jpeg" alt="Dampak Inflasi">
+        <div>
+          <h3>Contoh Masalah Sosial di Indonesia dan Faktor Penyebabnya</h3>
+          <p>Masalah sosial yang timbul pasti dapat memengaruhi kondisi masyarakat dan negara itu sendiri. Ada banyak contoh masalah sosial di Indonesia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 RezaPahala. Semua Hak Cipta Dilindungi.</p>
+  </footer>
+</body>
+</html>
